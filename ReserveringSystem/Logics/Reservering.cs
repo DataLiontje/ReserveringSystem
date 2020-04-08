@@ -8,13 +8,17 @@ namespace ReserveringSystem.Logics
 {
     class Reservering
     {
-        private int PersAmount { get; set; }
-        private string TelefoonNummer { get; set; }
-        private string Name { get; set; }
-        private bool Binnen { get; set; }
-        private int TafelNummer { get; set; }
+        private int persAmount;
+        private string telefoonNummer;
+        private string name;
+        private bool binnen;
+        private int tafelNummer;
 
-
+        public int PersAmount { get => persAmount; set => persAmount = value; }
+        public string TelefoonNummer { get => telefoonNummer; set => telefoonNummer = value; }
+        public string Name { get => name; set => name = value; }
+        public int TafelNummer { get => tafelNummer; set => tafelNummer = value; }
+        public bool Binnen { get => binnen; set => binnen = value; }
 
         public Reservering(String name, int amount, string telefoonNummer, int tafelNum, bool binnen)
         {
@@ -26,33 +30,6 @@ namespace ReserveringSystem.Logics
         }
 
 
-        public string GetTelNum()
-        {
-            return TelefoonNummer;
-        }
-
-
-        public int GetPersonAmount()
-        {
-            return PersAmount;
-        }
-
-
-        public int GetTafelNum()
-        {
-            return TafelNummer;
-        }
-
-        public string GetName()
-        {
-            return Name;
-        }
-
-
-        public bool IsBinnen()
-        {
-            return Binnen;
-        }
         
 
     }

@@ -16,8 +16,8 @@ namespace ReserveringSystem.Logics
         private int availableOutside;
 
 
-        public string Name { get; set; }
-        public int AvailableInside { get; set; }
+        public string Name { get => name; set => name = value; }
+        public int AvailableInside { get => availableInside; set => availableInside = value; }
         public int AvailableOutside { get => availableOutside; set => availableOutside = value; }
 
         public List<Reservering> reserveringen = new List<Reservering>();
@@ -49,7 +49,7 @@ namespace ReserveringSystem.Logics
 
             reserveringen.ForEach((Reservering reservering) =>
             {
-                if (reservering.GetName().ToLower().Equals(searchName.ToLower())) returnReservering = reservering;
+                if (reservering.Name.ToLower().Equals(searchName.ToLower())) returnReservering = reservering;
             });
 
             return returnReservering;
@@ -96,7 +96,7 @@ namespace ReserveringSystem.Logics
         {
             int available = AvailableOutside;
             reserveringen.ForEach((Reservering reservering) => {
-                if(!reservering.IsBinnen()) available -= (int) Math.Ceiling((Double)reservering.GetPersonAmount() / 6);
+                if(!reservering.Binnen) available -= (int) Math.Ceiling((Double)reservering.PersAmount / 6);
             });
             return available;
 
@@ -107,7 +107,7 @@ namespace ReserveringSystem.Logics
 
             int available = AvailableInside;
             reserveringen.ForEach((Reservering reservering) => {
-                if(reservering.IsBinnen()) available -= (int) Math.Ceiling((Double)reservering.GetPersonAmount() / 6);
+                if(reservering.Binnen) available -= (int) Math.Ceiling((Double)reservering.PersAmount / 6);
             });
             return available;
 
