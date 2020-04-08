@@ -73,7 +73,7 @@ namespace ReserveringSystem
             Button btn = (Button)sender;
             String reserveerder = btn.Text;
             Reservering resv = restaurant.GetReserveringByName(reserveerder);
-            MessageBox.Show("Reserveernaam: "+resv.GetName()+"\nAantal Personen: "+resv.GetPersonAmount()+"\nTelefoon Nummer: "+resv.GetTelNum()+"\nLocatie: "+(resv.IsBinnen() ? "Binnen" : "Buiten"), "Reservering tafel "+resv.GetTafelNum());
+            MessageBox.Show("Reserveernaam: "+resv.Name+"\nAantal Personen: "+resv.PersAmount+"\nTelefoon Nummer: "+resv.TelefoonNummer+"\nLocatie: "+(resv.Binnen ? "Binnen" : "Buiten"), "Reservering tafel "+resv.TafelNummer, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
