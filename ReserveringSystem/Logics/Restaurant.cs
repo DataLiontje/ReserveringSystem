@@ -11,9 +11,14 @@ namespace ReserveringSystem.Logics
 
         private static List<Restaurant> restaurants = new List<Restaurant>();
 
-        private string Name { get; set; }
-        private int AvailableInside { get; set; }
-        private int AvailableOutside { get; set; }
+        private string name;
+        private int availableInside;
+        private int availableOutside;
+
+
+        public string Name { get; set; }
+        public int AvailableInside { get; set; }
+        public int AvailableOutside { get => availableOutside; set => availableOutside = value; }
 
         public List<Reservering> reserveringen = new List<Reservering>();
 
@@ -28,13 +33,12 @@ namespace ReserveringSystem.Logics
 
 
 
-
         public static Restaurant GetRestaurantByName(string searchName)
         {
             Restaurant returnRestaurant = null;
             restaurants.ForEach((Restaurant restaurant) =>
             {
-                if (restaurant.GetName().ToLower().Equals(searchName.ToLower())) returnRestaurant = restaurant;
+                if (restaurant.Name.ToLower().Equals(searchName.ToLower())) returnRestaurant = restaurant;
             });
             return returnRestaurant;
         }
@@ -51,11 +55,15 @@ namespace ReserveringSystem.Logics
             return returnReservering;
         }
 
+
+
+
         public bool CanGetGetTables(bool inside, int amount)
         {
             if (inside)
             {
-                if (CalculateInside() >= amount) {
+                if (CalculateInside() >= amount)
+                {
                     return true;
                 }
                 else
@@ -65,7 +73,7 @@ namespace ReserveringSystem.Logics
             }
             else
             {
-                if(CalculateOutside() >= amount)
+                if (CalculateOutside() >= amount)
                 {
                     return true;
                 }
@@ -75,8 +83,6 @@ namespace ReserveringSystem.Logics
                 }
             }
         }
-
-
         public int GetNextAvailableTableNum()
         {
             int totalTables = AvailableOutside + AvailableInside;
@@ -85,16 +91,6 @@ namespace ReserveringSystem.Logics
 
             return totalTables;
         }
-
-
-
-
-        public String GetName()
-        {
-            return Name;
-        }
-
-
 
         public int CalculateOutside()
         {

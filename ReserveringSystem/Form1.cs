@@ -20,32 +20,6 @@ namespace ReserveringSystem
             BinnenTafelsNum.Text = Restaurant.GetRestaurantByName("moenen").CalculateInside().ToString();
             BuitenTafelsNum.Text = Restaurant.GetRestaurantByName("moenen").CalculateOutside().ToString();
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void SubmitReserveringButton_Click(object sender, EventArgs e)
         {
             string naamRes = NaamInput.Text;
@@ -93,7 +67,6 @@ namespace ReserveringSystem
             BinnenTafelsNum.Text = Restaurant.GetRestaurantByName("moenen").CalculateInside().ToString();
             BuitenTafelsNum.Text = Restaurant.GetRestaurantByName("moenen").CalculateOutside().ToString();
         }
-
         private void ReserveringButton(object sender, EventArgs e)
         {
             Restaurant restaurant = Restaurant.GetRestaurantByName("moenen");
@@ -101,21 +74,6 @@ namespace ReserveringSystem
             String reserveerder = btn.Text;
             Reservering resv = restaurant.GetReserveringByName(reserveerder);
             MessageBox.Show("Reserveernaam: "+resv.GetName()+"\nAantal Personen: "+resv.GetPersonAmount()+"\nTelefoon Nummer: "+resv.GetTelNum()+"\nLocatie: "+(resv.IsBinnen() ? "Binnen" : "Buiten"), "Reservering tafel "+resv.GetTafelNum());
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AantalPersInput_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

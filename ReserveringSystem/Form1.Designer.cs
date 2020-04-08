@@ -109,7 +109,7 @@
             this.BinnenTafels.Size = new System.Drawing.Size(56, 17);
             this.BinnenTafels.TabIndex = 1;
             this.BinnenTafels.Text = "Binnen:";
-            this.BinnenTafels.Click += new System.EventHandler(this.label4_Click);
+           
             // 
             // BuitenTafels
             // 
@@ -119,7 +119,7 @@
             this.BuitenTafels.Size = new System.Drawing.Size(52, 17);
             this.BuitenTafels.TabIndex = 0;
             this.BuitenTafels.Text = "Buiten:";
-            this.BuitenTafels.Click += new System.EventHandler(this.label3_Click);
+           
             // 
             // groupBox3
             // 
@@ -146,7 +146,7 @@
             this.TelNumLabel.Size = new System.Drawing.Size(125, 17);
             this.TelNumLabel.TabIndex = 6;
             this.TelNumLabel.Text = "Telefoon Nummer:";
-            this.TelNumLabel.Click += new System.EventHandler(this.label3_Click_1);
+           
             // 
             // SubmitReserveringButton
             // 
@@ -169,7 +169,7 @@
             0,
             0,
             0});
-            this.AantalPersInput.ValueChanged += new System.EventHandler(this.AantalPersInput_ValueChanged);
+            
             // 
             // label2
             // 
@@ -179,7 +179,7 @@
             this.label2.Size = new System.Drawing.Size(117, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Aantal Personen:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+           
             // 
             // label1
             // 
@@ -189,7 +189,7 @@
             this.label1.Size = new System.Drawing.Size(49, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Naam:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            
             // 
             // NaamInput
             // 
@@ -197,7 +197,7 @@
             this.NaamInput.Name = "NaamInput";
             this.NaamInput.Size = new System.Drawing.Size(203, 22);
             this.NaamInput.TabIndex = 0;
-            this.NaamInput.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+           
             // 
             // TelNumInput
             // 
